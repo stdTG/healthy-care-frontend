@@ -1,0 +1,58 @@
+query GET_PATIENT_BY_ID($id_: ID) {
+    user {
+        patient {
+            one(id_: $id_) {
+                id_
+                firstName
+                lastName
+                byPhone {
+                    phone
+                }
+                byEmail {
+                    email
+                }
+                language
+                sex
+                birthDate
+                fullAddress {
+                    city
+                    country
+                    address
+                    zipcode
+                }
+                lifestyle {
+                    uuid
+                    activity
+                    description
+                }
+                vaccines {
+                    uuid
+                    name
+                    date
+                }
+                medicalHistory {
+                    id_
+                    name
+                    date
+                    comment
+                }
+                medicalCondition {
+                    uuid
+                    name
+                    startDate
+                    endDate
+                }
+                allergies {
+                    uuid
+                    name
+                    date
+                }
+                family {
+                    mother
+                    father
+                    grandparents
+                }
+            }
+        }
+    }
+}

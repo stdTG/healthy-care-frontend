@@ -1,0 +1,82 @@
+query GET_EVENTS ($filter: FilterFindManyAppointment!) {
+    schedule {
+        eventMany(filter: $filter) {
+            items {
+                ... on Appointment {
+                    id_
+                    title
+                    eventType
+                    location {
+                        id_
+                    }
+                    startDate
+                    endDate
+                    createdAt
+                    createdBy{
+                        status
+                        id_
+                        firstName
+                        lastName
+                        sex
+                        birthDate
+                    }
+                    isAppointment
+                    note
+                    isOnline
+                    patient {
+                        status
+                        id_
+                        firstName
+                        lastName
+                        sex
+                        birthDate
+                    }
+                    user {
+                        status
+                        id_
+                        firstName
+                        lastName
+                        sex
+                        birthDate
+                    }
+                }
+                ... on Event {
+                    id_
+                    title
+                    eventType
+                    location {
+                        id_
+                    }
+                    startDate
+                    endDate
+                    createdAt
+                    createdBy {
+                        status
+                        id_
+                        firstName
+                        lastName
+                        sex
+                        birthDate
+                    }
+                    patients {
+                        status
+                        id_
+                        firstName
+                        lastName
+                        sex
+                        birthDate
+                    }
+                    users {
+                        status
+                        id_
+                        firstName
+                        lastName
+                        sex
+                        birthDate
+                    }
+                    isAppointment
+                }
+            }
+        }
+    }
+}

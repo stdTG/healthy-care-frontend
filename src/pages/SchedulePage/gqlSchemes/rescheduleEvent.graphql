@@ -1,0 +1,15 @@
+mutation RESCHEDULE_EVENT ($id_: GrapheneMongoId!, $startDate: DateTime!, $endDate: DateTime!) {
+    schedule {
+        rescheduleEvent(record: {id_: $id_, startDate: $startDate, endDate: $endDate }) {
+            ok
+            error {
+                message
+            }
+            result {
+                id_
+                startDate
+                endDate
+            }
+        }
+    }
+}

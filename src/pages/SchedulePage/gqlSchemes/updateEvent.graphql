@@ -1,0 +1,59 @@
+mutation UPDATE_EVENT ($recordEvent: UpdateEventInput!, $recordReschedule: RescheduleEventInput!) {
+    schedule {
+        updateEvent(record: $recordEvent) {
+            ok
+            error {
+                message
+            }
+            result {
+                id_
+                title
+                eventType
+                createdAt
+                createdBy {
+                    id_
+                    firstName
+                    lastName
+                }
+                isAppointment
+                location {
+                    id_
+                }
+                patients {
+                    id_
+                    firstName
+                    lastName
+                }
+                endDate
+                startDate
+                createdBy {
+                    status
+                    id_
+                    firstName
+                    lastName
+                    sex
+                    birthDate
+                }
+                users {
+                    id_
+                    firstName
+                    lastName
+                    sex
+                    status
+                    birthDate
+                }
+            }
+        }
+        rescheduleEvent(record: $recordReschedule) {
+            ok
+            error {
+                message
+            }
+            result {
+                id_
+                startDate
+                endDate
+            }
+        }
+    }
+}

@@ -1,0 +1,42 @@
+div.mxRubberband {
+  position: absolute;
+  overflow: hidden;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #00a2ff;
+  background: #0077ff;
+}
+
+/*TODO update ui according to design*/
+div.mxPopupMenu {
+  -webkit-box-shadow: 3px 3px 12px #c0c0c0;
+  -moz-box-shadow: 3px 3px 12px #c0c0c0;
+  box-shadow: 3px 3px 12px #c0c0c0;
+  position: absolute;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+}
+table.mxPopupMenu {
+  border-collapse: collapse;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+tr.mxPopupMenuItem {
+  color: black;
+  cursor: pointer;
+}
+tr.mxPopupMenuItemHover {
+  background-color: #000066;
+  color: #ffffff;
+  cursor: pointer;
+}
+td.mxPopupMenuItem {
+  padding: 2px 30px 2px 10px;
+  white-space: nowrap;
+  font-size: 8pt;
+}
+td.mxPopupMenuIcon {
+  background-color: #d0d0d0;
+  padding: 2px 4px 2px 4px;
+}

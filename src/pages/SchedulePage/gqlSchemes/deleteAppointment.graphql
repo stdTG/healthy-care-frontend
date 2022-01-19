@@ -1,0 +1,11 @@
+mutation DELETE_APPOINTMENT ($id_: ID!) {
+    schedule {
+        cancelAppointment(id_: $id_) {
+            ok
+            error {
+                message
+            }
+            resultId
+        }
+    }
+}

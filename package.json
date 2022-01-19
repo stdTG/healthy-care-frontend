@@ -1,0 +1,115 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "React example starter project",
+  "keywords": [
+    "react",
+    "starter"
+  ],
+  "main": "src/index.js",
+  "dependencies": {
+    "@apollo/client": "^3.2.5",
+    "@date-io/date-fns": "^1.3.13",
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@loadable/component": "^5.13.1",
+    "@material-ui/core": "4.11.3",
+    "@material-ui/icons": "4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.56",
+    "@material-ui/pickers": "3.2.10",
+    "@reduxjs/toolkit": "1.4.0",
+    "@types/ramda": "^0.27.36",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-redux": "^7.1.16",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/styled-components": "^5.1.7",
+    "@types/yup": "^0.29.11",
+    "amazon-cognito-identity-js": "^4.3.3",
+    "antd": "4.7.0",
+    "chart.js": "^2.9.4",
+    "countries-list": "^2.5.6",
+    "date-fns": "^2.15.0",
+    "final-form": "4.20.1",
+    "final-form-arrays": "^3.0.2",
+    "graphql": "^15.5.0",
+    "i18next": "^20.4.0",
+    "mui-rff": "^3.0.1",
+    "mxgraph-js": "^1.0.1",
+    "notistack": "^1.0.5",
+    "prop-types": "^15.7.2",
+    "ramda": "^0.27.1",
+    "rc-picker": "^2.2.1",
+    "react": "^17.0.1",
+    "react-big-calendar": "^0.28.5",
+    "react-calendar": "^3.1.0",
+    "react-chartjs-2": "^2.11.1",
+    "react-dnd": "^14.0.2",
+    "react-dnd-html5-backend": "^14.0.0",
+    "react-dom": "^17.0.0",
+    "react-final-form": "^6.5.2",
+    "react-final-form-arrays": "^3.1.3",
+    "react-flow-renderer": "^9.6.6",
+    "react-grid-layout": "^1.0.0",
+    "react-i18next": "^11.11.4",
+    "react-icons": "^4.2.0",
+    "react-infinite-scroll-component": "^5.1.0",
+    "react-phone-input-2": "^2.13.9",
+    "react-redux": "7.2.1",
+    "react-router-dom": "5.2.0",
+    "react-scripts": "4.0.1",
+    "recharts": "^2.1.5",
+    "redux": "^4.0.5",
+    "redux-persist": "6.0.0",
+    "sendbird": "^3.0.138",
+    "sendbird-uikit": "https://github.com/alialiev10/SendBird-UIKIT-JavaScript/tarball/master",
+    "shortid": "^2.2.15",
+    "styled-components": "^5.1.1",
+    "use-debounce": "^5.2.0",
+    "use-http": "1.0.13",
+    "yup": "^0.29.2"
+  },
+  "devDependencies": {
+    "@graphql-codegen/cli": "^1.20.1",
+    "@graphql-codegen/typescript": "^1.20.2",
+    "@graphql-codegen/typescript-operations": "^1.17.14",
+    "@graphql-codegen/typescript-react-apollo": "^2.2.1",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.2",
+    "prettier": "2.0.5",
+    "typescript": "^4.1.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ],
+    "rules": {
+      "no-unused-vars": "off"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run type-check && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "type-check": "tsc --noEmit",
+    "codegen": "graphql-codegen"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

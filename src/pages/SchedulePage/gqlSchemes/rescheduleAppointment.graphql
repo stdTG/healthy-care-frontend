@@ -1,0 +1,15 @@
+mutation RESCHEDULE_APPOINTMENT ($id_: GrapheneMongoId!, $startDate: DateTime!, $endDate: DateTime!) {
+    schedule {
+        rescheduleAppointment(record: {id_: $id_, startDate: $startDate, endDate: $endDate }) {
+            ok
+            error {
+                message
+            }
+            result {
+                id_
+                startDate
+                endDate
+            }
+        }
+    }
+}

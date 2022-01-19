@@ -1,0 +1,14 @@
+mutation CREATE_SUB_ORG($record: SubOrgCreateInput!) {
+    orgUnit {
+        createSubOrg (record: $record) {
+            result {
+                name
+            }
+            ok
+            resultId
+            error{
+                message
+            }
+        }
+    }
+}

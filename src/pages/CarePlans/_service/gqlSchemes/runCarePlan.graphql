@@ -1,0 +1,11 @@
+mutation RUN_CARE_PLAN ($carePlanId: ID!, $patientId: ID! ) {
+    carePlan {
+        runCarePlan(carePlanId: $carePlanId, patientId: $patientId) {
+            ok
+            error {
+                message
+            }
+            assignmentId
+        }
+    }
+}

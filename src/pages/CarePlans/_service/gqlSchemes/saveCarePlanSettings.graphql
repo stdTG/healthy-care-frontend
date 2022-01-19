@@ -1,0 +1,11 @@
+mutation SAVE_CARE_PLAN_SETTINGS ($data: CarePlanInput!, $type: GqlCarePlanType!) {
+    carePlan {
+        create(data: $data, type: $type) {
+            ok
+            error {
+                message
+            }
+            resultId
+        }
+    }
+}

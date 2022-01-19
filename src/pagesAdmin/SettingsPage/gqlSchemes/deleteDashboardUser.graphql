@@ -1,0 +1,12 @@
+mutation DELETE_DASHBOARD_USER ($id_: ID!) {
+    user {
+        dashboardUser {
+            delete(id_: $id_) {
+                ok
+                error {
+                    message
+                }
+            }
+        }
+    }
+}

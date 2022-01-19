@@ -1,0 +1,19 @@
+mutation ADD_VACCINE ($patient: ID!, $record: VaccineInput!) {
+    user {
+        patientUser {
+            vaccine {
+                add(patient: $patient, record: $record) {
+                    ok
+                    error {
+                        message
+                    }
+                    result {
+                        uuid
+                        name
+                        date
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+query GET_MASTER_ORG_INFO {
+    orgUnit {
+        masterOrgMe {
+            name
+            phone
+            email
+            site
+            fullAddress {
+                country
+                city
+                address
+                zipcode
+            }
+            workingHours {
+                dayOfWeek
+                startTime
+                endTime
+                startLunchTime
+                endLunchTime
+            }
+            isDefaultWorkingHours
+            logo
+            created
+            language
+            facebook
+            linkedin
+            instagram
+            description
+        }
+    }
+}

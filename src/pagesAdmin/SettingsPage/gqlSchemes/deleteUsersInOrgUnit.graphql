@@ -1,0 +1,20 @@
+mutation DELETE_USERS_IN_ORG_UNIT ($record: AddUserToOrgUnitInput!) {
+    orgUnit {
+        deleteUsers(record: $record) {
+            ok
+            error {
+                message
+            }
+            result {
+                ...on CareTeam {
+                    id_
+                    name
+                }
+                ...on SubOrganization {
+                    id_
+                    name
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+mutation LOAD_CARE_PLAN_JSON ($id_: ID, $type: GqlCarePlanType!, $uiJson: String) {
+    carePlan {
+        loadJson(id_: $id_, type: $type, uiJson: $uiJson) {
+            ok
+            error {
+                message
+            }
+            result {
+                id_
+                name
+                subtitle
+                uiJson
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+query GET_CARE_PLANS ($type: GqlCarePlanType, $page: Int!, $pageSize: Int!) {
+    carePlan {
+        list(type: $type, page: $page, perPage: $pageSize) {
+            items {
+                id_
+                name
+                subtitle
+                description
+                image
+                durationMonths
+                durationWeeks
+                durationDays
+                authorId
+                tags
+                revision
+                status
+            }
+            pageInfo {
+                totalPages
+                totalItems
+                page
+                perPage
+                hasNextPage
+            }
+        }
+    }
+}

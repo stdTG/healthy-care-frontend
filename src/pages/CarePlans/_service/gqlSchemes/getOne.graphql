@@ -1,0 +1,20 @@
+query GET_ONE_CARE_PLAN ($type: GqlCarePlanType, $id_: ID) {
+    carePlan {
+        one (id_: $id_, type: $type){
+            id_
+            name
+            subtitle
+            description
+            image
+            durationMonths
+            durationWeeks
+            durationDays
+            authorId
+            tags
+            revision
+            status
+            awsStateMachineArn
+            uiJson
+        }
+    }
+}

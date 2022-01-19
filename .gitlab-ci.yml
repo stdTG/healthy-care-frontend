@@ -1,0 +1,68 @@
+image: docker:19.03.11
+
+services:
+  - docker:dind
+
+stages:
+  - build
+#  - test
+  - deploy
+
+
+.yarn_build:  
+  image: node:10.19
+
+  script:
+    - npm install
+    - unset CI 
+    - npm install
+    - npm run build
+  artifacts:    
+    paths:      
+      - ./build  
+yarn_staging:  
+  extends: .yarn_build  
+  stage: build  
+  before_script:    
+    - export APP_ENV="production"  
+    - cat $STAGING_ENV_FILE > .env
+  only:    
+    refs:      
+      - master
+yarn_prod:  
+  extends: .yarn_build  
+  stage: build  
+  before_script:    
+    - export APP_ENV="production"  
+    - cat $PRODUCTION_ENV_FILE > .env
+  only:    
+    refs:      
+      - production
+
+
+.deploy_aws:  
+  image: python:latest  
+  # when: manual  
+  script: |    
+    pip install awscli #Install awscli tools    
+    aws s3 sync ./build/ s3://${S3_BUCKET}
+deploy_staging:  
+  extends: .deploy_aws  
+  stage: deploy  
+  dependencies:    
+    - yarn_staging
+  before_script:    
+    - export S3_BUCKET=${S3_BUCKET_STAGING}  
+  only:    
+    refs:      
+      - master
+deploy_prod:  
+  extends: .deploy_aws  
+  stage: deploy  
+  dependencies:    
+    - yarn_prod  
+  before_script:    
+    - export S3_BUCKET=${S3_BUCKET_PRODUCTION}  
+  only:    
+    refs:      
+      - production

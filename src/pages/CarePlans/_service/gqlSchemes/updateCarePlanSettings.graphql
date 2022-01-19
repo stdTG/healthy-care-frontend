@@ -1,0 +1,27 @@
+mutation UPDATE_CARE_PLAN_SETTINGS ($type: GqlCarePlanType!, $data: CarePlanInput!) {
+    carePlan {
+        update(type: $type, data: $data) {
+            ok
+            error {
+                message
+            }
+            resultId
+            result {
+                id_
+                name
+                subtitle
+                description
+                image
+                durationMonths
+                durationWeeks
+                durationDays
+                authorId
+                tags
+                revision
+                status
+                awsStateMachineArn
+                uiJson
+            }
+        }
+    }
+}

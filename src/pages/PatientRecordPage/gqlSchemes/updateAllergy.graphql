@@ -1,0 +1,19 @@
+mutation UPDATE_ALLERGY ($patient: ID!, $record: AllergyUpdateInput!) {
+    user {
+        patientUser {
+            allergy {
+                update(patient: $patient, record: $record) {
+                    ok
+                    error {
+                        message
+                    }
+                    result {
+                        uuid
+                        name
+                        date
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+mutation DELETE_ALLERGY ($patient: ID!, $allergyUuid: UUID!) {
+    user {
+        patientUser {
+            allergy {
+                delete(patient: $patient, allergyUuid: $allergyUuid) {
+                    ok
+                    error {
+                        message
+                    }
+                }
+            }
+        }
+    }
+}

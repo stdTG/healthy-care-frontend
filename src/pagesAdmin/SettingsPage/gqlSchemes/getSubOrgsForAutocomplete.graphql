@@ -1,0 +1,22 @@
+query GET_SUB_ORGS_FOR_AUTOCOMPLETE ($page: Int!, $perPage: Int!, $filter: FilterFindManyOrgUnit) {
+    orgUnit {
+        subOrgPagination(page: $page, perPage: $perPage, filter: $filter) {
+            items {
+                id_
+                name
+                careTeams {
+                    id_
+                    name
+                }
+            }
+            pageInfo {
+                totalPages
+                totalItems
+                page
+                perPage
+                hasNextPage
+                hasPreviousPage
+            }
+        }
+    }
+}

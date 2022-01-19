@@ -1,0 +1,3 @@
+.MuiAutocomplete-inputRoot[class*='MuiOutlinedInput-root'][class*='MuiOutlinedInput-marginDense'] {
+  padding: 1px 10px;
+}

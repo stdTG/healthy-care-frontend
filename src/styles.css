@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+}
+
+div:hover::-webkit-scrollbar-thumb {
+  background: #1976d2;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #eeeeee;
+  border-radius: 18px;
+}
+
+.dndflow {
+  flex: 1;
+}
+
+/*.react-flow__edges {*/
+/*  z-index: 99 !important;*/
+/*}*/

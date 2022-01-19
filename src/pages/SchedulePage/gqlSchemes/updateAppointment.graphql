@@ -1,0 +1,70 @@
+mutation UPDATE_APPOINTMENT ($recordAppointment: UpdateAppointmentInput!, $recordReschedule: RescheduleAppointmentInput!) {
+    schedule {
+        updateAppointment(record: $recordAppointment) {
+            ok
+            error {
+                message
+            }
+            result {
+                id_
+                title
+                isOnline
+                eventType
+                createdAt
+                createdBy {
+                    id_
+                    firstName
+                    lastName
+                }
+                isAppointment
+                location {
+                    id_
+                }
+                patient {
+                    status
+                    id_
+                    firstName
+                    lastName
+                    sex
+                    birthDate
+                }
+                createdBy {
+                    status
+                    id_
+                    firstName
+                    lastName
+                    sex
+                    birthDate
+                }
+                note
+                endDate
+                startDate
+                user {
+                    status
+                    id_
+                    firstName
+                    lastName
+                    sex
+                    birthDate
+                }
+                patient {
+                    id_
+                    firstName
+                    lastName
+                }
+
+            }
+        }
+        rescheduleAppointment(record: $recordReschedule) {
+            ok
+            error {
+                message
+            }
+            result {
+                id_
+                startDate
+                endDate
+            }
+        }
+    }
+}

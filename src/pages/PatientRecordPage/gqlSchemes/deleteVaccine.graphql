@@ -1,0 +1,14 @@
+mutation DELETE_VACCINE ($patient: ID!, $vaccineUuid: UUID!) {
+    user {
+        patientUser {
+            vaccine {
+                delete(patient: $patient, vaccineUuid: $vaccineUuid) {
+                    ok
+                    error {
+                        message
+                    }
+                }
+            }
+        }
+    }
+}

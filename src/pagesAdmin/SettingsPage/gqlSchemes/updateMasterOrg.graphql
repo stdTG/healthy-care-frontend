@@ -1,0 +1,13 @@
+mutation UPDATE_MASTER_ORG ($record: MasterOrgUpdateInput!) {
+    orgUnit {
+        updateMasterOrg(record: $record) {
+            ok
+            error {
+                message
+            }
+            result {
+                name
+            }
+        }
+    }
+}

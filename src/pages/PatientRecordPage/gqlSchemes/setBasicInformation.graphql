@@ -1,0 +1,31 @@
+mutation SET_BASIC_INFO (
+    $id: ID!
+    $firstName: String
+    $lastName: String
+    $birthDate: Date
+    $sex: SexEnum
+    $address: AddressInput
+    $language: String
+) {
+    user {
+        patientUser {
+            update(
+                record: {
+                    id_: $id
+                    firstName: $firstName
+                    lastName: $lastName
+                    birthDate: $birthDate
+                    sex: $sex
+                    address: $address
+                    language: $language
+                }
+            ) {
+                resultId
+                ok
+                error {
+                    message
+                }
+            }
+        }
+    }
+}

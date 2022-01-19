@@ -1,0 +1,19 @@
+mutation UPDATE_FAMILY ($patient: ID!, $record: FamilyInput!) {
+    user {
+        patientUser {
+            updateFamily(patient: $patient, record: $record) {
+                ok
+                result {
+                    family {
+                        mother
+                        father
+                        grandparents
+                    }
+                }
+                error {
+                    message
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+mutation UPDATE_DASHBOARD_USER ($record: DashboardUserUpdateInput!, $user: ID!) {
+    user {
+        dashboardUser {
+            update(record: $record, user: $user) {
+                ok
+                error{
+                    message
+                }
+                result {
+                    id_
+                    firstName
+                    lastName
+                    role
+                    orgUnit{
+                        ... on CareTeam {
+                            id_,
+                            name,
+                            __typename
+                            subOrg {
+                                id_
+                                name
+                            }
+                        }
+                        ... on SubOrganization {
+                            id_,
+                            name
+                            __typename
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

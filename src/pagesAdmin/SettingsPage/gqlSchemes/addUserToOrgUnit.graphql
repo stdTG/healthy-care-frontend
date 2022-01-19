@@ -1,0 +1,72 @@
+mutation ADD_USERS ($record: AddUserToOrgUnitInput!) {
+    orgUnit {
+        addUsers(record: $record ) {
+            ok
+            error {
+                message
+            }
+            result {
+                ... on CareTeam {
+                    users{
+                        id_,
+                        lastName,
+                        firstName,
+                        byEmail{
+                            email
+                        }
+                        byPhone{
+                            phone
+                        }
+                        role,
+                        orgUnit{
+                            ... on CareTeam {
+                                id_,
+                                name,
+                                __typename
+                                subOrg {
+                                    id_
+                                    name
+                                }
+                            }
+                            ... on SubOrganization {
+                                id_,
+                                name
+                                __typename
+                            }
+                        }
+                    }
+                }
+                ... on SubOrganization {
+                    users{
+                        id_,
+                        lastName,
+                        firstName,
+                        byEmail{
+                            email
+                        }
+                        byPhone{
+                            phone
+                        }
+                        role,
+                        orgUnit{
+                            ... on CareTeam {
+                                id_,
+                                name,
+                                __typename
+                                subOrg {
+                                    id_
+                                    name
+                                }
+                            }
+                            ... on SubOrganization {
+                                id_,
+                                name
+                                __typename
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

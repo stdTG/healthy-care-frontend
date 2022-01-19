@@ -1,0 +1,10 @@
+mutation DELETE_CARE_TEAM ($id_: ID!) {
+    orgUnit {
+        deleteCareTeam(id_: $id_) {
+            ok
+            error{
+                message
+            }
+        }
+    }
+}

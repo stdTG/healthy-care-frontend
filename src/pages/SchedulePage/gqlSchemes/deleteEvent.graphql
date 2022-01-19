@@ -1,0 +1,16 @@
+mutation DELETE_EVENT ($id: ID!) {
+    schedule {
+        cancelEvent(id_: $id) {
+            ok
+            error {
+                code
+            }
+            resultId
+            result {
+                users {
+                    status
+                }
+            }
+        }
+    }
+}

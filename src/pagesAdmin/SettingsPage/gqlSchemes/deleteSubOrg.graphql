@@ -1,0 +1,10 @@
+mutation DELETE_SUB_ORG ($id_: ID!) {
+    orgUnit {
+        deleteSubOrg(id_: $id_) {
+            ok
+            error{
+                message
+            }
+        }
+    }
+}

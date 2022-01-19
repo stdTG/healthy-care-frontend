@@ -1,0 +1,19 @@
+mutation ADD_ALLERGY($patient: ID!, $record: AllergyInput!) {
+    user {
+        patientUser {
+            allergy {
+                add(patient: $patient, record: $record) {
+                    ok
+                    error {
+                        message
+                    }
+                    result {
+                        uuid
+                        name
+                        date
+                    }
+                }
+            }
+        }
+    }
+}

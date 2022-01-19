@@ -1,0 +1,24 @@
+query GET_DASHBOARD_USERS_FOR_AUTOCOMPLETE(
+    $page: Int!
+    $perPage: Int!
+    $filter: FilterFindManyUserInput
+) {
+    user {
+        dashboard {
+            pagedList(page: $page, perPage: $perPage, filter: $filter) {
+                items {
+                    id_
+                    firstName
+                    lastName
+                }
+                pageInfo {
+                    perPage
+                    page
+                    totalItems
+                    totalPages
+                    hasNextPage
+                }
+            }
+        }
+    }
+}
